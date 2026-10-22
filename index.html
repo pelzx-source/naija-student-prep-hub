@@ -1,0 +1,2412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a7a3b">
+<title>Naija Student Prep Hub | PelzX</title>
+
+<style>
+:root{
+  --green:#0a7a3b;
+  --dark:#07110b;
+  --black:#020604;
+  --white:#ffffff;
+  --light:#f3f8f5;
+  --gray:#66736b;
+  --border:#dce8e0;
+  --danger:#dc3545;
+  --warning:#f4b400;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--light);
+  color:#142019;
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(2,6,4,.96);
+  backdrop-filter:blur(12px);
+  color:white;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:14px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+}
+
+.logo{
+  font-size:1.25rem;
+  font-weight:900;
+  letter-spacing:.5px;
+}
+
+.logo span{
+  color:#42d67d;
+}
+
+.nav-links{
+  display:flex;
+  gap:18px;
+  list-style:none;
+}
+
+.nav-links a{
+  color:#dce9e1;
+  font-size:.9rem;
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:#42d67d;
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:0;
+  color:white;
+  font-size:1.5rem;
+}
+
+/* HERO */
+.hero{
+  background:
+    radial-gradient(circle at 85% 20%,rgba(26,183,89,.22),transparent 30%),
+    linear-gradient(135deg,#020604,#071b0e 55%,#0a7a3b);
+  color:white;
+  padding:90px 20px 75px;
+}
+
+.hero-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  align-items:center;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 13px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.07);
+  border-radius:50px;
+  font-size:.82rem;
+  margin-bottom:18px;
+}
+
+.hero h1{
+  font-size:clamp(2.2rem,6vw,4.5rem);
+  line-height:1.05;
+  margin-bottom:20px;
+}
+
+.hero h1 span{
+  color:#48db80;
+}
+
+.hero p{
+  color:#d2ded6;
+  max-width:680px;
+  font-size:1.05rem;
+  margin-bottom:28px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.btn{
+  border:0;
+  padding:13px 18px;
+  border-radius:10px;
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-primary{
+  background:#42d67d;
+  color:#031009;
+}
+
+.btn-secondary{
+  background:white;
+  color:#07110b;
+}
+
+.btn-dark{
+  background:#07110b;
+  color:white;
+}
+
+.btn-outline{
+  border:1px solid var(--green);
+  color:var(--green);
+  background:white;
+}
+
+.hero-card{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:24px;
+  padding:28px;
+  box-shadow:0 25px 70px rgba(0,0,0,.2);
+}
+
+.hero-card h3{
+  margin-bottom:15px;
+}
+
+.hero-list{
+  list-style:none;
+}
+
+.hero-list li{
+  padding:10px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.hero-list li:last-child{
+  border-bottom:0;
+}
+
+/* GENERAL */
+.section{
+  padding:75px 20px;
+}
+
+.section.alt{
+  background:white;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-heading{
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.section-heading .eyebrow{
+  color:var(--green);
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:.78rem;
+  margin-bottom:7px;
+}
+
+.section-heading h2{
+  font-size:clamp(1.8rem,4vw,2.7rem);
+  margin-bottom:10px;
+}
+
+.section-heading p{
+  color:var(--gray);
+  max-width:720px;
+  margin:auto;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:800px;
+  margin:0 auto 40px;
+  position:relative;
+}
+
+.search-box input{
+  width:100%;
+  padding:16px 20px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  outline:none;
+  background:white;
+  box-shadow:0 10px 25px rgba(0,0,0,.04);
+}
+
+.search-box input:focus{
+  border-color:var(--green);
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e7f7ed;
+  margin-bottom:16px;
+  font-size:1.4rem;
+}
+
+.card h3{
+  margin-bottom:8px;
+}
+
+.card p{
+  color:var(--gray);
+  font-size:.93rem;
+}
+
+.subject-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.subject-card::after{
+  content:"";
+  position:absolute;
+  right:-30px;
+  bottom:-30px;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:rgba(10,122,59,.06);
+}
+
+/* TIPS */
+.tip-list{
+  display:grid;
+  gap:14px;
+}
+
+.tip{
+  background:white;
+  border-left:4px solid var(--green);
+  padding:17px;
+  border-radius:10px;
+  border-top:1px solid var(--border);
+  border-right:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+/* TOOLS */
+.tool-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
+}
+
+.tool{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:25px;
+}
+
+.tool h3{
+  margin-bottom:8px;
+}
+
+.tool p{
+  color:var(--gray);
+  font-size:.9rem;
+  margin-bottom:18px;
+}
+
+.input-group{
+  display:grid;
+  gap:10px;
+  margin-bottom:14px;
+}
+
+.input-group label{
+  font-size:.88rem;
+  font-weight:700;
+}
+
+.input-group input,
+.input-group select{
+  width:100%;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:9px;
+  outline:none;
+  background:white;
+}
+
+.result{
+  margin-top:15px;
+  background:#e9f8ef;
+  border-radius:10px;
+  padding:14px;
+  font-weight:800;
+  color:#075b2d;
+  display:none;
+}
+
+/* QUIZ */
+.quiz-container{
+  max-width:850px;
+  margin:auto;
+}
+
+.quiz-box{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 15px 35px rgba(0,0,0,.05);
+}
+
+.quiz-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.question-number{
+  color:var(--green);
+  font-weight:900;
+}
+
+.quiz-score{
+  font-weight:900;
+}
+
+.question{
+  font-size:1.3rem;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.options{
+  display:grid;
+  gap:12px;
+}
+
+.option{
+  width:100%;
+  padding:15px;
+  text-align:left;
+  background:white;
+  border:1px solid var(--border);
+  border-radius:11px;
+  transition:.2s;
+}
+
+.option:hover{
+  border-color:var(--green);
+  background:#f4fbf6;
+}
+
+.option.correct{
+  background:#dff6e7;
+  border-color:#1b9b50;
+  color:#075b2d;
+  font-weight:800;
+}
+
+.option.wrong{
+  background:#fde3e6;
+  border-color:#dc3545;
+  color:#9f1c2a;
+}
+
+.quiz-actions{
+  margin-top:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+.quiz-result{
+  display:none;
+  text-align:center;
+  padding:20px;
+}
+
+.final-score{
+  font-size:3rem;
+  color:var(--green);
+  font-weight:900;
+  margin:10px 0;
+}
+
+.progress-wrap{
+  width:100%;
+  height:8px;
+  background:#e7eee9;
+  border-radius:20px;
+  overflow:hidden;
+  margin-bottom:20px;
+}
+
+.progress{
+  height:100%;
+  width:0%;
+  background:var(--green);
+  transition:.3s;
+}
+
+/* TIMER */
+.timer{
+  text-align:center;
+}
+
+.timer-display{
+  font-size:3.3rem;
+  font-weight:900;
+  letter-spacing:2px;
+  margin:15px 0;
+  color:var(--green);
+}
+
+.timer-buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+/* PLANNER */
+.planner-form{
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.planner-form input,
+.planner-form select{
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:9px;
+}
+
+.task-list{
+  display:grid;
+  gap:10px;
+}
+
+.task{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  padding:13px;
+  background:#f7faf8;
+  border:1px solid var(--border);
+  border-radius:10px;
+}
+
+.task.done span{
+  text-decoration:line-through;
+  opacity:.55;
+}
+
+.delete-btn{
+  background:#ffe7e9;
+  color:#a91e2c;
+  border:0;
+  border-radius:7px;
+  padding:7px 10px;
+}
+
+/* CAREER */
+.career{
+  cursor:pointer;
+}
+
+.career-details{
+  margin-top:12px;
+  display:none;
+  color:var(--gray);
+  font-size:.9rem;
+}
+
+/* EXAMS */
+.exam-card{
+  background:#07110b;
+  color:white;
+  border-radius:20px;
+  padding:25px;
+}
+
+.exam-card p{
+  color:#cbd8cf;
+  margin:10px 0 17px;
+}
+
+.exam-card ul{
+  padding-left:20px;
+  color:#dbe6df;
+}
+
+/* FAQ */
+.faq{
+  max-width:850px;
+  margin:auto;
+}
+
+.faq-item{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:12px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+
+.faq-question{
+  width:100%;
+  border:0;
+  background:white;
+  text-align:left;
+  padding:17px;
+  font-weight:800;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+}
+
+.faq-answer{
+  display:none;
+  padding:0 17px 17px;
+  color:var(--gray);
+}
+
+/* NOTICE */
+.notice{
+  position:fixed;
+  bottom:20px;
+  left:50%;
+  transform:translate(-50%,120px);
+  background:#07110b;
+  color:white;
+  padding:13px 18px;
+  border-radius:10px;
+  z-index:2000;
+  transition:.3s;
+  box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.notice.show{
+  transform:translate(-50%,0);
+}
+
+/* FOOTER */
+footer{
+  background:#020604;
+  color:white;
+  padding:55px 20px 25px;
+}
+
+.footer-grid{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr;
+  gap:35px;
+}
+
+footer h3{
+  margin-bottom:12px;
+}
+
+footer p,
+footer li{
+  color:#b9c8be;
+  font-size:.9rem;
+}
+
+footer ul{
+  list-style:none;
+  display:grid;
+  gap:8px;
+}
+
+.footer-bottom{
+  max-width:1200px;
+  margin:35px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  text-align:center;
+  color:#91a096;
+  font-size:.85rem;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+  .hero-container{
+    grid-template-columns:1fr;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .tool-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    background:#020604;
+    padding:18px 20px;
+    flex-direction:column;
+    border-top:1px solid rgba(255,255,255,.08);
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+}
+
+@media(max-width:600px){
+  .hero{
+    padding:65px 16px 55px;
+  }
+
+  .section{
+    padding:55px 16px;
+  }
+
+  .grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .planner-form{
+    grid-template-columns:1fr;
+  }
+
+  .quiz-box{
+    padding:20px;
+  }
+
+  .question{
+    font-size:1.1rem;
+  }
+
+  .timer-display{
+    font-size:2.6rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">Naija <span>Student Prep Hub</span></a>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#subjects">Subjects</a></li>
+      <li><a href="#tips">Study Tips</a></li>
+      <li><a href="#quiz">Quiz</a></li>
+      <li><a href="#tools">Tools</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#exams">Exams</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-container">
+
+    <div>
+      <div class="badge">🇳🇬 Built for Nigerian Secondary School Students</div>
+
+      <h1>
+        Learn Better.<br>
+        <span>Prepare Smarter.</span>
+      </h1>
+
+      <p>
+        Naija Student Prep Hub is a modern student platform designed to help
+        secondary school students study smarter, prepare for examinations,
+        calculate percentages, practise questions and plan their academic journey.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#subjects" class="btn btn-primary">Explore Subjects</a>
+        <a href="#quiz" class="btn btn-secondary">Take the Quiz</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <h3>What you can do here</h3>
+
+      <ul class="hero-list">
+        <li>📚 Explore major secondary school subjects</li>
+        <li>🧠 Test your knowledge with 50 questions</li>
+        <li>📊 Calculate percentages easily</li>
+        <li>⏱️ Use a study timer</li>
+        <li>📝 Create your personal study plan</li>
+        <li>🎯 Explore possible career paths</li>
+        <li>🎓 Prepare for WAEC, NECO & JAMB</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SUBJECTS -->
+<section class="section" id="subjects">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Learn</div>
+      <h2>Subject Hub</h2>
+      <p>
+        Explore important subjects commonly studied by secondary school students
+        in Nigeria.
+      </p>
+    </div>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="subjectSearch"
+        placeholder="Search for a subject..."
+        onkeyup="searchSubjects()"
+      >
+    </div>
+
+    <div class="grid" id="subjectGrid">
+
+      <div class="card subject-card">
+        <div class="icon">➗</div>
+        <h3>Mathematics</h3>
+        <p>Numbers, algebra, geometry, statistics, probability and problem solving.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">📖</div>
+        <h3>English Language</h3>
+        <p>Grammar, comprehension, vocabulary, writing and effective communication.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">🧬</div>
+        <h3>Biology</h3>
+        <p>Living organisms, cells, genetics, ecology, human biology and evolution.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">⚗️</div>
+        <h3>Chemistry</h3>
+        <p>Matter, atoms, chemical reactions, acids, bases and periodic chemistry.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">⚡</div>
+        <h3>Physics</h3>
+        <p>Motion, forces, energy, electricity, waves, heat and basic physics principles.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">🌍</div>
+        <h3>Geography</h3>
+        <p>Environment, maps, climate, population, resources and physical geography.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">💰</div>
+        <h3>Economics</h3>
+        <p>Demand, supply, markets, production, money and economic development.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">🏛️</div>
+        <h3>Government</h3>
+        <p>Political systems, democracy, constitution, citizenship and governance.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">💻</div>
+        <h3>Computer Studies</h3>
+        <p>Computer hardware, software, programming, internet and digital literacy.</p>
+      </div>
+
+      <div class="card subject-card">
+        <div class="icon">🔬</div>
+        <h3>General Science</h3>
+        <p>Basic scientific concepts covering matter, energy, living things and nature.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- STUDY TIPS -->
+<section class="section alt" id="tips">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Improve</div>
+      <h2>Study Smarter</h2>
+      <p>Simple habits that can make your study sessions more effective.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="tip">
+        <strong>01. Set clear goals</strong>
+        <p>Decide exactly what you want to complete before starting a study session.</p>
+      </div>
+
+      <div class="tip">
+        <strong>02. Avoid distractions</strong>
+        <p>Keep unnecessary notifications and social media away while studying.</p>
+      </div>
+
+      <div class="tip">
+        <strong>03. Practise questions</strong>
+        <p>Don't only read. Solve questions to check whether you actually understand.</p>
+      </div>
+
+      <div class="tip">
+        <strong>04. Use active recall</strong>
+        <p>Close your textbook and try to explain what you have learned from memory.</p>
+      </div>
+
+      <div class="tip">
+        <strong>05. Review regularly</strong>
+        <p>Review older topics so that important information stays fresh in your memory.</p>
+      </div>
+
+      <div class="tip">
+        <strong>06. Take healthy breaks</strong>
+        <p>Short breaks can help you stay focused during longer study sessions.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- QUIZ -->
+<section class="section" id="quiz">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Challenge Yourself</div>
+      <h2>50-Question Mixed Quiz</h2>
+      <p>
+        Test yourself across Mathematics, English, Biology, Chemistry, Physics,
+        Geography, Economics, Government, Computer Studies and General Science.
+      </p>
+    </div>
+
+    <div class="quiz-container">
+
+      <div class="quiz-box">
+
+        <div class="progress-wrap">
+          <div class="progress" id="quizProgress"></div>
+        </div>
+
+        <div class="quiz-top">
+          <div class="question-number" id="questionNumber">
+            Question 1 of 50
+          </div>
+
+          <div class="quiz-score" id="quizScore">
+            Score: 0
+          </div>
+        </div>
+
+        <div class="question" id="questionText"></div>
+
+        <div class="options" id="options"></div>
+
+        <div class="quiz-actions">
+          <span id="categoryLabel"></span>
+
+          <button
+            class="btn btn-primary"
+            id="nextBtn"
+            onclick="nextQuestion()"
+          >
+            Next Question →
+          </button>
+        </div>
+
+        <div class="quiz-result" id="quizResult">
+
+          <div>🎉 Quiz Completed!</div>
+
+          <div class="final-score" id="finalScore">0/50</div>
+
+          <h3 id="scoreTitle"></h3>
+
+          <p id="scoreMessage"></p>
+
+          <br>
+
+          <button class="btn btn-primary" onclick="restartQuiz()">
+            Try Again
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TOOLS -->
+<section class="section alt" id="tools">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Student Tools</div>
+      <h2>Useful Study Tools</h2>
+      <p>Quick tools to support your academic preparation.</p>
+    </div>
+
+    <div class="tool-grid">
+
+      <!-- Percentage Calculator -->
+      <div class="tool">
+        <h3>📊 Percentage Calculator</h3>
+        <p>Calculate your percentage quickly.</p>
+
+        <div class="input-group">
+          <label>Score obtained</label>
+          <input type="number" id="scoreInput" placeholder="e.g. 75">
+        </div>
+
+        <div class="input-group">
+          <label>Total score</label>
+          <input type="number" id="totalInput" placeholder="e.g. 100">
+        </div>
+
+        <button class="btn btn-primary" onclick="calculatePercentage()">
+          Calculate
+        </button>
+
+        <div class="result" id="percentageResult"></div>
+      </div>
+
+
+      <!-- Study Timer -->
+      <div class="tool timer">
+        <h3>⏱️ Study Timer</h3>
+        <p>Use a simple countdown timer for focused study sessions.</p>
+
+        <div class="timer-display" id="timerDisplay">25:00</div>
+
+        <div class="timer-buttons">
+          <button class="btn btn-primary" onclick="startTimer()">Start</button>
+          <button class="btn btn-dark" onclick="pauseTimer()">Pause</button>
+          <button class="btn btn-outline" onclick="resetTimer()">Reset</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- STUDY PLANNER -->
+<section class="section" id="planner">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Organise</div>
+      <h2>Study Planner</h2>
+      <p>Create tasks and keep track of your study goals.</p>
+    </div>
+
+    <div class="tool">
+
+      <div class="planner-form">
+
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Study task e.g. Revise Algebra"
+        >
+
+        <input
+          type="date"
+          id="taskDate"
+        >
+
+        <button class="btn btn-primary" onclick="addTask()">
+          Add Task
+        </button>
+
+      </div>
+
+      <div class="task-list" id="taskList"></div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CAREERS -->
+<section class="section alt" id="careers">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Future</div>
+      <h2>Career Explorer</h2>
+      <p>
+        Explore different career paths and the skills commonly connected to them.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card career" onclick="toggleCareer(this)">
+        <div class="icon">💻</div>
+        <h3>Software Developer</h3>
+        <p>Build websites, applications and digital products.</p>
+        <div class="career-details">
+          Useful skills include programming, problem solving, mathematics,
+          logical thinking and continuous learning.
+        </div>
+      </div>
+
+      <div class="card career" onclick="toggleCareer(this)">
+        <div class="icon">🎨</div>
+        <h3>Graphic Designer</h3>
+        <p>Create visual communication for brands and organisations.</p>
+        <div class="career-details">
+          Useful skills include design principles, typography, creativity,
+          visual communication and design software.
+        </div>
+      </div>
+
+      <div class="card career" onclick="toggleCareer(this)">
+        <div class="icon">🔬</div>
+        <h3>Medical Professional</h3>
+        <p>Work in healthcare, medicine and human wellbeing.</p>
+        <div class="career-details">
+          Biology, Chemistry, Physics, discipline and strong communication
+          skills are useful foundations.
+        </div>
+      </div>
+
+      <div class="card career" onclick="toggleCareer(this)">
+        <div class="icon">📊</div>
+        <h3>Data Analyst</h3>
+        <p>Use data to discover patterns and support decisions.</p>
+        <div class="career-details">
+          Useful skills include Mathematics, Statistics, Excel, databases,
+          programming and analytical thinking.
+        </div>
+      </div>
+
+      <div class="card career" onclick="toggleCareer(this)">
+        <div class="icon">⚖️</div>
+        <h3>Lawyer</h3>
+        <p>Work with law, legal systems and advocacy.</p>
+        <div class="career-details">
+          Strong English, reading, writing, critical thinking and communication
+          skills can be valuable.
+        </div>
+      </div>
+
+      <div class="card career" onclick="toggleCareer(this)">
+        <div class="icon">📈</div>
+        <h3>Entrepreneur</h3>
+        <p>Build businesses, products and solutions to problems.</p>
+        <div class="career-details">
+          Useful skills include communication, creativity, financial literacy,
+          leadership, marketing and problem solving.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EXAMS -->
+<section class="section" id="exams">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Exam Preparation</div>
+      <h2>WAEC, NECO & JAMB</h2>
+      <p>Build a consistent preparation routine instead of waiting until the last minute.</p>
+    </div>
+
+    <div class="grid">
+
+      <div class="exam-card">
+        <h3>WAEC</h3>
+        <p>Prepare for your West African Senior School Certificate Examination.</p>
+
+        <ul>
+          <li>Understand your subjects</li>
+          <li>Practise past questions</li>
+          <li>Improve time management</li>
+          <li>Review difficult topics</li>
+        </ul>
+      </div>
+
+      <div class="exam-card">
+        <h3>NECO</h3>
+        <p>Build strong subject knowledge and practise examination questions.</p>
+
+        <ul>
+          <li>Follow your syllabus</li>
+          <li>Practise regularly</li>
+          <li>Review corrections</li>
+          <li>Study consistently</li>
+        </ul>
+      </div>
+
+      <div class="exam-card">
+        <h3>JAMB</h3>
+        <p>Prepare strategically for the UTME with regular practice.</p>
+
+        <ul>
+          <li>Know your subject combination</li>
+          <li>Practise CBT-style questions</li>
+          <li>Work on speed and accuracy</li>
+          <li>Track your performance</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section class="section alt" id="faq">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Help</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Is this website free?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes. The features on this frontend version are available to students
+          without requiring payment or an account.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Does the quiz have 50 questions?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes. The quiz contains exactly 50 mixed questions covering multiple
+          secondary school subjects.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Does the planner save my tasks?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          Yes. Tasks are saved locally in your browser using localStorage.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFAQ(this)">
+          Does this website replace a teacher?
+          <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+          No. It is a learning support tool. Students should still use their
+          school materials, teachers, textbooks and official examination resources.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+
+    <div>
+      <h3>Naija Student Prep Hub</h3>
+      <p>
+        A student-focused platform created to help secondary school students
+        in Nigeria study, practise and prepare for their academic journey.
+      </p>
+    </div>
+
+    <div>
+      <h3>Developer</h3>
+      <p><strong>Fasinasi Oluwapelumi</strong></p>
+      <p>PelzX — Tech & Art Creative</p>
+      <p>Design. Decode. Inspire.</p>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>
+          <a href="mailto:fasinasiakinbolarinwa@gmail.com">
+            📧 fasinasiakinbolarinwa@gmail.com
+          </a>
+        </li>
+
+        <li>
+          <a href="https://wa.me/2349074956155" target="_blank">
+            💬 WhatsApp: 09074956155
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Naija Student Prep Hub. Built by PelzX — Fasinasi Oluwapelumi.
+  </div>
+</footer>
+
+
+<div class="notice" id="notice"></div>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+
+/* =========================
+   SUBJECT SEARCH
+========================= */
+
+function searchSubjects(){
+
+  const input =
+    document.getElementById("subjectSearch").value.toLowerCase();
+
+  const cards =
+    document.querySelectorAll("#subjectGrid .subject-card");
+
+  cards.forEach(card => {
+
+    const text = card.textContent.toLowerCase();
+
+    card.style.display =
+      text.includes(input) ? "block" : "none";
+
+  });
+}
+
+
+/* =========================
+   NOTICE
+========================= */
+
+let noticeTimeout;
+
+function showNotice(message){
+
+  const notice = document.getElementById("notice");
+
+  notice.textContent = message;
+  notice.classList.add("show");
+
+  clearTimeout(noticeTimeout);
+
+  noticeTimeout = setTimeout(() => {
+    notice.classList.remove("show");
+  }, 2500);
+}
+
+
+/* =========================
+   50 QUESTION QUIZ
+========================= */
+
+const questions = [
+
+  /* MATHEMATICS 1-5 */
+
+  {
+    category:"Mathematics",
+    question:"What is 15 × 4?",
+    options:["45","50","60","75"],
+    answer:2
+  },
+
+  {
+    category:"Mathematics",
+    question:"What is 144 ÷ 12?",
+    options:["10","12","14","16"],
+    answer:1
+  },
+
+  {
+    category:"Mathematics",
+    question:"If x + 7 = 15, what is x?",
+    options:["6","7","8","9"],
+    answer:2
+  },
+
+  {
+    category:"Mathematics",
+    question:"What is 25% of 200?",
+    options:["25","40","50","75"],
+    answer:2
+  },
+
+  {
+    category:"Mathematics",
+    question:"What is the area of a rectangle with length 8 cm and width 5 cm?",
+    options:["13 cm²","26 cm²","40 cm²","80 cm²"],
+    answer:2
+  },
+
+
+  /* ENGLISH 6-10 */
+
+  {
+    category:"English Language",
+    question:"Choose the correct plural of 'child'.",
+    options:["Childs","Children","Childes","Childrens"],
+    answer:1
+  },
+
+  {
+    category:"English Language",
+    question:"Which word is a synonym for 'happy'?",
+    options:["Sad","Angry","Joyful","Tired"],
+    answer:2
+  },
+
+  {
+    category:"English Language",
+    question:"What is the opposite of 'ancient'?",
+    options:["Old","Modern","Historic","Past"],
+    answer:1
+  },
+
+  {
+    category:"English Language",
+    question:"Which of these is a noun?",
+    options:["Quickly","Beautiful","Teacher","Run"],
+    answer:2
+  },
+
+  {
+    category:"English Language",
+    question:"Choose the correctly spelled word.",
+    options:["Neccessary","Necessary","Necesary","Necassary"],
+    answer:1
+  },
+
+
+  /* BIOLOGY 11-15 */
+
+  {
+    category:"Biology",
+    question:"What is the basic unit of life?",
+    options:["Tissue","Organ","Cell","System"],
+    answer:2
+  },
+
+  {
+    category:"Biology",
+    question:"Which organ pumps blood around the human body?",
+    options:["Liver","Heart","Kidney","Lung"],
+    answer:1
+  },
+
+  {
+    category:"Biology",
+    question:"Which part of a plant absorbs water from the soil?",
+    options:["Flower","Leaf","Root","Fruit"],
+    answer:2
+  },
+
+  {
+    category:"Biology",
+    question:"What gas do humans mainly need for respiration?",
+    options:["Carbon dioxide","Oxygen","Nitrogen","Hydrogen"],
+    answer:1
+  },
+
+  {
+    category:"Biology",
+    question:"Which blood cells help fight infections?",
+    options:["Red blood cells","White blood cells","Platelets","Plasma"],
+    answer:1
+  },
+
+
+  /* CHEMISTRY 16-20 */
+
+  {
+    category:"Chemistry",
+    question:"What is the chemical symbol for oxygen?",
+    options:["Ox","O","O2","Og"],
+    answer:1
+  },
+
+  {
+    category:"Chemistry",
+    question:"What is the pH of a neutral substance at room temperature?",
+    options:["0","5","7","14"],
+    answer:2
+  },
+
+  {
+    category:"Chemistry",
+    question:"Which particle has a negative charge?",
+    options:["Proton","Neutron","Electron","Nucleus"],
+    answer:2
+  },
+
+  {
+    category:"Chemistry",
+    question:"What is H₂O commonly known as?",
+    options:["Salt","Water","Oxygen","Hydrogen"],
+    answer:1
+  },
+
+  {
+    category:"Chemistry",
+    question:"Which of these is an acid?",
+    options:["Hydrochloric acid","Sodium chloride","Water","Oxygen"],
+    answer:0
+  },
+
+
+  /* PHYSICS 21-25 */
+
+  {
+    category:"Physics",
+    question:"What is the SI unit of force?",
+    options:["Joule","Newton","Watt","Pascal"],
+    answer:1
+  },
+
+  {
+    category:"Physics",
+    question:"What force pulls objects toward the Earth?",
+    options:["Friction","Magnetism","Gravity","Pressure"],
+    answer:2
+  },
+
+  {
+    category:"Physics",
+    question:"What is the SI unit of electric current?",
+    options:["Volt","Ohm","Ampere","Watt"],
+    answer:2
+  },
+
+  {
+    category:"Physics",
+    question:"Which form of energy is stored in food?",
+    options:["Chemical energy","Sound energy","Light energy","Nuclear energy"],
+    answer:0
+  },
+
+  {
+    category:"Physics",
+    question:"Light travels fastest through which medium?",
+    options:["Water","Glass","Air","Vacuum"],
+    answer:3
+  },
+
+
+  /* GEOGRAPHY 26-30 */
+
+  {
+    category:"Geography",
+    question:"What is the largest continent?",
+    options:["Africa","Asia","Europe","North America"],
+    answer:1
+  },
+
+  {
+    category:"Geography",
+    question:"What is the largest ocean?",
+    options:["Atlantic Ocean","Indian Ocean","Pacific Ocean","Arctic Ocean"],
+    answer:2
+  },
+
+  {
+    category:"Geography",
+    question:"Which imaginary line divides the Earth into Northern and Southern Hemispheres?",
+    options:["Prime Meridian","Equator","Tropic of Cancer","International Date Line"],
+    answer:1
+  },
+
+  {
+    category:"Geography",
+    question:"Which instrument is used to measure temperature?",
+    options:["Barometer","Thermometer","Rain gauge","Anemometer"],
+    answer:1
+  },
+
+  {
+    category:"Geography",
+    question:"Nigeria is located on which continent?",
+    options:["Asia","Europe","Africa","South America"],
+    answer:2
+  },
+
+
+  /* ECONOMICS 31-35 */
+
+  {
+    category:"Economics",
+    question:"What is the basic economic problem?",
+    options:["Profit","Scarcity","Trade","Money"],
+    answer:1
+  },
+
+  {
+    category:"Economics",
+    question:"What happens to demand when the price of a normal good rises, all else equal?",
+    options:["It generally rises","It generally falls","It remains exactly the same","It disappears"],
+    answer:1
+  },
+
+  {
+    category:"Economics",
+    question:"Which of these is a factor of production?",
+    options:["Land","Money only","Price","Tax"],
+    answer:0
+  },
+
+  {
+    category:"Economics",
+    question:"What is inflation?",
+    options:[
+      "A general rise in prices",
+      "A fall in population",
+      "An increase in rainfall",
+      "A decrease in production only"
+    ],
+    answer:0
+  },
+
+  {
+    category:"Economics",
+    question:"Which institution is responsible for monetary policy in Nigeria?",
+    options:[
+      "Central Bank of Nigeria",
+      "Federal Road Safety Corps",
+      "Nigerian Ports Authority",
+      "National Population Commission"
+    ],
+    answer:0
+  },
+
+
+  /* GOVERNMENT 36-40 */
+
+  {
+    category:"Government",
+    question:"What is democracy?",
+    options:[
+      "Government by the military",
+      "Government by the people",
+      "Government by one family",
+      "Government without laws"
+    ],
+    answer:1
+  },
+
+  {
+    category:"Government",
+    question:"Which arm of government makes laws?",
+    options:["Executive","Judiciary","Legislature","Civil service"],
+    answer:2
+  },
+
+  {
+    category:"Government",
+    question:"Which arm of government interprets laws?",
+    options:["Judiciary","Executive","Legislature","Media"],
+    answer:0
+  },
+
+  {
+    category:"Government",
+    question:"What is a constitution?",
+    options:[
+      "A football rulebook",
+      "A set of fundamental rules guiding a state",
+      "A school timetable",
+      "A tax receipt"
+    ],
+    answer:1
+  },
+
+  {
+    category:"Government",
+    question:"Nigeria operates a system of government based on what principle?",
+    options:[
+      "Separation of powers",
+      "No government",
+      "One-person rule",
+      "No constitution"
+    ],
+    answer:0
+  },
+
+
+  /* COMPUTER STUDIES 41-45 */
+
+  {
+    category:"Computer Studies",
+    question:"What does CPU stand for?",
+    options:[
+      "Central Processing Unit",
+      "Computer Personal Unit",
+      "Central Program Utility",
+      "Control Processing User"
+    ],
+    answer:0
+  },
+
+  {
+    category:"Computer Studies",
+    question:"Which device is mainly used to enter text into a computer?",
+    options:["Monitor","Keyboard","Speaker","Projector"],
+    answer:1
+  },
+
+  {
+    category:"Computer Studies",
+    question:"Which of these is an operating system?",
+    options:["Windows","Google","YouTube","WhatsApp"],
+    answer:0
+  },
+
+  {
+    category:"Computer Studies",
+    question:"What does URL stand for?",
+    options:[
+      "Universal Reading Link",
+      "Uniform Resource Locator",
+      "United Resource Language",
+      "User Reference Location"
+    ],
+    answer:1
+  },
+
+  {
+    category:"Computer Studies",
+    question:"Which device displays visual output from a computer?",
+    options:["Keyboard","Mouse","Monitor","Microphone"],
+    answer:2
+  },
+
+
+  /* GENERAL SCIENCE 46-50 */
+
+  {
+    category:"General Science",
+    question:"At sea level, water normally boils at what temperature?",
+    options:["50°C","75°C","100°C","150°C"],
+    answer:2
+  },
+
+  {
+    category:"General Science",
+    question:"Which planet is known as the Red Planet?",
+    options:["Earth","Mars","Venus","Jupiter"],
+    answer:1
+  },
+
+  {
+    category:"General Science",
+    question:"Which natural satellite orbits the Earth?",
+    options:["Mars","Sun","Moon","Venus"],
+    answer:2
+  },
+
+  {
+    category:"General Science",
+    question:"Which vitamin is commonly produced by the body when skin is exposed to sunlight?",
+    options:["Vitamin A","Vitamin B12","Vitamin C","Vitamin D"],
+    answer:3
+  },
+
+  {
+    category:"General Science",
+    question:"Which organ is primarily responsible for filtering waste from the blood?",
+    options:["Heart","Kidney","Lung","Stomach"],
+    answer:1
+  }
+
+];
+
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+
+/* LOAD QUESTION */
+
+function loadQuestion(){
+
+  answered = false;
+
+  const q = questions[currentQuestion];
+
+  document.getElementById("questionNumber").textContent =
+    "Question " + (currentQuestion + 1) + " of " + questions.length;
+
+  document.getElementById("questionText").textContent =
+    q.question;
+
+  document.getElementById("quizScore").textContent =
+    "Score: " + score;
+
+  document.getElementById("categoryLabel").textContent =
+    q.category;
+
+  const options =
+    document.getElementById("options");
+
+  options.innerHTML = "";
+
+  q.options.forEach((option,index)=>{
+
+    const button =
+      document.createElement("button");
+
+    button.className = "option";
+
+    button.textContent = option;
+
+    button.onclick = function(){
+      selectAnswer(button,index);
+    };
+
+    options.appendChild(button);
+
+  });
+
+
+  /* UPDATE PROGRESS */
+
+  const progress =
+    ((currentQuestion) / questions.length) * 100;
+
+  document.getElementById("quizProgress").style.width =
+    progress + "%";
+}
+
+
+/* SELECT ANSWER */
+
+function selectAnswer(button,index){
+
+  if(answered) return;
+
+  answered = true;
+
+  const correct =
+    questions[currentQuestion].answer;
+
+  const buttons =
+    document.querySelectorAll(".option");
+
+
+  if(index === correct){
+
+    button.classList.add("correct");
+
+    score++;
+
+    document.getElementById("quizScore").textContent =
+      "Score: " + score;
+
+    showNotice("Correct answer! 🎉");
+
+  }else{
+
+    button.classList.add("wrong");
+
+    buttons[correct].classList.add("correct");
+
+    showNotice("Not quite. The correct answer is highlighted.");
+
+  }
+}
+
+
+/* NEXT QUESTION */
+
+function nextQuestion(){
+
+  if(!answered){
+
+    showNotice("Choose an answer first.");
+
+    return;
+  }
+
+  currentQuestion++;
+
+  if(currentQuestion >= questions.length){
+
+    showQuizResult();
+
+    return;
+  }
+
+  loadQuestion();
+}
+
+
+/* QUIZ RESULT */
+
+function showQuizResult(){
+
+  document.getElementById("questionText").style.display =
+    "none";
+
+  document.getElementById("options").style.display =
+    "none";
+
+  document.querySelector(".quiz-actions").style.display =
+    "none";
+
+  document.getElementById("quizResult").style.display =
+    "block";
+
+  document.getElementById("quizProgress").style.width =
+    "100%";
+
+  document.getElementById("finalScore").textContent =
+    score + "/" + questions.length;
+
+
+  const percentage =
+    (score / questions.length) * 100;
+
+  let title = "";
+  let message = "";
+
+
+  if(score === questions.length){
+
+    title = "Perfect Score! 🏆";
+
+    message =
+      "Outstanding! You answered every question correctly.";
+
+  }else if(percentage >= 80){
+
+    title = "Excellent Work! 🎉";
+
+    message =
+      "You have a very strong performance. Keep it up!";
+
+  }else if(percentage >= 60){
+
+    title = "Good Job! 💪";
+
+    message =
+      "You are doing well. Review the questions you missed and keep practising.";
+
+  }else if(percentage >= 40){
+
+    title = "Keep Improving! 📚";
+
+    message =
+      "You have a good starting point. Spend more time reviewing your subjects.";
+
+  }else{
+
+    title = "Keep Practising! 🚀";
+
+    message =
+      "Don't give up. Review your topics and try the quiz again.";
+
+  }
+
+
+  document.getElementById("scoreTitle").textContent =
+    title;
+
+  document.getElementById("scoreMessage").textContent =
+    message;
+}
+
+
+/* RESTART QUIZ */
+
+function restartQuiz(){
+
+  currentQuestion = 0;
+
+  score = 0;
+
+  document.getElementById("questionText").style.display =
+    "block";
+
+  document.getElementById("options").style.display =
+    "grid";
+
+  document.querySelector(".quiz-actions").style.display =
+    "flex";
+
+  document.getElementById("quizResult").style.display =
+    "none";
+
+  loadQuestion();
+
+}
+
+
+/* =========================
+   PERCENTAGE CALCULATOR
+========================= */
+
+function calculatePercentage(){
+
+  const scoreValue =
+    parseFloat(document.getElementById("scoreInput").value);
+
+  const totalValue =
+    parseFloat(document.getElementById("totalInput").value);
+
+  const result =
+    document.getElementById("percentageResult");
+
+
+  if(
+    isNaN(scoreValue) ||
+    isNaN(totalValue) ||
+    totalValue <= 0 ||
+    scoreValue < 0
+  ){
+
+    result.style.display = "block";
+
+    result.textContent =
+      "Please enter valid scores.";
+
+    return;
+  }
+
+
+  const percentage =
+    (scoreValue / totalValue) * 100;
+
+
+  result.style.display = "block";
+
+  result.textContent =
+    "Your percentage is " +
+    percentage.toFixed(2) +
+    "%";
+}
+
+
+/* =========================
+   STUDY TIMER
+========================= */
+
+let timerSeconds = 25 * 60;
+let timerInterval = null;
+
+
+function updateTimerDisplay(){
+
+  const minutes =
+    Math.floor(timerSeconds / 60);
+
+  const seconds =
+    timerSeconds % 60;
+
+  document.getElementById("timerDisplay").textContent =
+    String(minutes).padStart(2,"0") +
+    ":" +
+    String(seconds).padStart(2,"0");
+}
+
+
+function startTimer(){
+
+  if(timerInterval) return;
+
+  timerInterval =
+    setInterval(()=>{
+
+      if(timerSeconds <= 0){
+
+        clearInterval(timerInterval);
+
+        timerInterval = null;
+
+        showNotice("Study session complete! 🎉");
+
+        return;
+      }
+
+      timerSeconds--;
+
+      updateTimerDisplay();
+
+    },1000);
+}
+
+
+function pauseTimer(){
+
+  clearInterval(timerInterval);
+
+  timerInterval = null;
+}
+
+
+function resetTimer(){
+
+  pauseTimer();
+
+  timerSeconds = 25 * 60;
+
+  updateTimerDisplay();
+}
+
+
+/* =========================
+   STUDY PLANNER
+========================= */
+
+let tasks =
+  JSON.parse(localStorage.getItem("naijaPrepTasks")) || [];
+
+
+function saveTasks(){
+
+  localStorage.setItem(
+    "naijaPrepTasks",
+    JSON.stringify(tasks)
+  );
+}
+
+
+function renderTasks(){
+
+  const list =
+    document.getElementById("taskList");
+
+  list.innerHTML = "";
+
+
+  if(tasks.length === 0){
+
+    list.innerHTML =
+      "<p style='color:#66736b'>No study tasks yet. Add your first task above.</p>";
+
+    return;
+  }
+
+
+  tasks.forEach((task,index)=>{
+
+    const div =
+      document.createElement("div");
+
+    div.className =
+      "task" + (task.done ? " done" : "");
+
+
+    div.innerHTML = `
+
+      <div>
+
+        <span>
+          <strong>${escapeHTML(task.text)}</strong>
+        </span>
+
+        <br>
+
+        <small>
+          ${task.date || "No date"}
+        </small>
+
+      </div>
+
+      <div>
+
+        <button
+          class="btn btn-outline"
+          onclick="toggleTask(${index})"
+          style="padding:7px 10px;margin-right:5px;"
+        >
+          ${task.done ? "Undo" : "Done"}
+        </button>
+
+        <button
+          class="delete-btn"
+          onclick="deleteTask(${index})"
+        >
+          Delete
+        </button>
+
+      </div>
+
+    `;
+
+    list.appendChild(div);
+
+  });
+}
+
+
+function addTask(){
+
+  const input =
+    document.getElementById("taskInput");
+
+  const date =
+    document.getElementById("taskDate");
+
+  const text =
+    input.value.trim();
+
+
+  if(!text){
+
+    showNotice("Enter a study task first.");
+
+    return;
+  }
+
+
+  tasks.push({
+
+    text:text,
+
+    date:date.value,
+
+    done:false
+
+  });
+
+
+  saveTasks();
+
+  renderTasks();
+
+  input.value = "";
+
+  date.value = "";
+
+  showNotice("Study task added.");
+}
+
+
+function toggleTask(index){
+
+  tasks[index].done =
+    !tasks[index].done;
+
+  saveTasks();
+
+  renderTasks();
+}
+
+
+function deleteTask(index){
+
+  tasks.splice(index,1);
+
+  saveTasks();
+
+  renderTasks();
+
+  showNotice("Task deleted.");
+}
+
+
+/* SECURITY HELPER FOR PLANNER TEXT */
+
+function escapeHTML(text){
+
+  return text
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+
+/* =========================
+   CAREER EXPLORER
+========================= */
+
+function toggleCareer(card){
+
+  const details =
+    card.querySelector(".career-details");
+
+  const isVisible =
+    details.style.display === "block";
+
+  details.style.display =
+    isVisible ? "none" : "block";
+}
+
+
+/* =========================
+   FAQ
+========================= */
+
+function toggleFAQ(button){
+
+  const answer =
+    button.nextElementSibling;
+
+  const symbol =
+    button.querySelector("span");
+
+  const isOpen =
+    answer.style.display === "block";
+
+
+  answer.style.display =
+    isOpen ? "none" : "block";
+
+  symbol.textContent =
+    isOpen ? "+" : "−";
+}
+
+
+/* =========================
+   START APP
+========================= */
+
+loadQuestion();
+
+renderTasks();
+
+updateTimerDisplay();
+
+</script>
+
+</body>
+</html>
